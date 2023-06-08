@@ -13,11 +13,11 @@ def hello_name(name):
     if name.isnumeric() == True:
         return "Please don't use numbers"
     else:
-        return f'Hi {name}!'
+        return f'Hi {name.capitalize()}!' # seen in solution. Capitalizes name if they put in lowercase
 
-@app.route('/repeat/<num>/<result>')
+@app.route('/repeat/<num>/<result>') # in solution: /<int:num>/<string:word>
 def repeat_result_num(num, result):
-    if num.isnumeric():
+    if num.isnumeric(): # solution basically confirms value put into address is a num
         return f'<p>{result}</p>'*int(num)
     else:
         return f'{num} is not a valid number. Please provide a valid number.'
